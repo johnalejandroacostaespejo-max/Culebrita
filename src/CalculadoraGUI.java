@@ -37,6 +37,8 @@ public class CalculadoraGUI extends JFrame implements ActionListener {
 
         add(panel, BorderLayout.CENTER);
 
+        setLocationRelativeTo(null); // Centrar la ventana
+        setResizable(false); // No permitir redimensionar
         setVisible(true);
     }
 
@@ -50,22 +52,33 @@ public class CalculadoraGUI extends JFrame implements ActionListener {
             num1 = num2 = resultado = 0;
             operacion = ' ';
         } else if (comando.equals("=")) {
-            num2 = Double.parseDouble(display.getText());
-            switch (operacion) {
-                case '+': resultado = num1 + num2; break;
-                case '-': resultado = num1 - num2; break;
-                case '*': resultado = num1 * num2; break;
-                case '/':
-                    if (num2 != 0) resultado = num1 / num2;
-                    else display.setText("Error");
-                    return;
+            try {
+                num2 = Double.parseDouble(display.getText());
+                switch (operacion) {
+                    case '+': resultado = num1 + num2; break;
+                    case '-': resultado = num1 - num2; break;
+                    case '*': resultado = num1 * num2; break;
+                    case '/':
+                        if (num2 != 0) resultado = num1 / num2;
+                        else {
+                            display.setText("Error");
+                            return;
+                        }
+                        break;
+                }
+                display.setText("" + resultado);
+            } catch (NumberFormatException ex) {
+                display.setText("Error");
             }
-            display.setText("" + resultado);
         } else {
             if (!display.getText().isEmpty()) {
-                num1 = Double.parseDouble(display.getText());
-                operacion = comando.charAt(0);
-                display.setText("");
+                try {
+                    num1 = Double.parseDouble(display.getText());
+                    operacion = comando.charAt(0);
+                    display.setText("");
+                } catch (NumberFormatException ex) {
+                    display.setText("Error");
+                }
             }
         }
     }
