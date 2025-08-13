@@ -25,8 +25,8 @@ public class CalculadoraGUI extends JFrame implements ActionListener {
                 "7", "8", "9", "/", "√",
                 "4", "5", "6", "*", "^",
                 "1", "2", "3", "-", "%",
-                "0", "C", "x²", "+", "√x",
-                "(", ")", "π", "e", "="
+                "0", "e", "x²", "+", "√x",
+                "(", ")", "π", "c", "="
         };
 
         panel.setBackground(Color.pink);
