@@ -1,4 +1,4 @@
-public class Pruebas_Video {
+public class Pruebas_Video1 {
     public static void main(String[] args) {
         // 1. Declara una variable de tipo String y asígnale tu nombre.
         String Name = "John";
