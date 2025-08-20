@@ -5,10 +5,14 @@ public class Pruebas_Video2 {
         // 1. Crea una variable con el resultado de cada operación aritmética.
         var a = 12;
         var b = 3;
-        System.out.println(a + b);
-        System.out.println(a - b);
-        System.out.println(a * b);
-        System.out.println(a / b);
+        var ch = a + b;
+        System.out.println(ch);
+        var d = a - b;
+        System.out.println(d);
+        var e = a * b;
+        System.out.println(e);
+        var f = a / b;
+        System.out.println(f);
         // 2. Crea una variable para cada tipo de operación de asignación.
         var c = 3;
         a = (b / c) * 4;
