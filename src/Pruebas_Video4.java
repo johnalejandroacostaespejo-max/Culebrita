@@ -1,6 +1,6 @@
 public class Pruebas_Video4 {
     public static void main(String[] args) {
-        var age = 10;
+        var age = 50;
 
 
         // 1. Establece la edad de un usuario y muestra si puede votar (mayor o igual a 18).
@@ -24,8 +24,10 @@ public class Pruebas_Video4 {
         // 10. Usa tres variables a, b, c y muestra cuál es el mayor de las tres.
 
 
-        if (age > 18) {
+        if (age <= 39 && age >= 18) {
             System.out.println("Es mayor de edad, ya es legal :V");
+        } else if (age >= 40) {
+            System.out.println("Cochino!");
         } else if (age == 17) {
             System.out.println("Es menor de edad, si puedes, con protección");
         } else if (age == 16 || age == 15) {
